@@ -1,0 +1,3 @@
+complete-registration=env1
+configure=env2
+configured=env3
