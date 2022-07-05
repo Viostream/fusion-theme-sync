@@ -120,8 +120,10 @@ func insertSubstitutions(raw string, subs map[string]string) string {
 	defaultMessages := strings.Split(raw, defaultMessagesSeperator)
 Substitutions:
 	for subK, subV := range subs {
+		log.Printf("[INFO] subbing %v=%v", subK, subV)
 		// Search defaultMessages for the substitution
 		for i, v := range defaultMessages {
+			log.Printf("[DEBUG] trying %v", v)
 			blankSub := fmt.Sprintf("%v=", subK)
 			if strings.HasPrefix(v, blankSub) {
 				defaultMessages[i] = fmt.Sprintf("%v=%v", subK, subV)

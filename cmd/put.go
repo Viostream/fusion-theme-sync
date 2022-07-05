@@ -20,7 +20,7 @@ var putCmd = &cobra.Command{
 		ensureAPIKeyPresent()
 		fmt.Println("Running fusion-theme-sync put")
 
-		// Load susbsitution keys
+		// Load substitution keys
 		var substitutions map[string]string
 		if substitutionFile != "" {
 			var err error
@@ -30,7 +30,7 @@ var putCmd = &cobra.Command{
 			}
 		}
 
-		// Load from disk
+		// Load theme from disk
 		theme, err := theme.LoadFromDisk(directory, substitutions)
 		if err != nil {
 			log.Fatal(err)
@@ -58,7 +58,7 @@ var putCmd = &cobra.Command{
 
 		if ferr != nil {
 			log.Printf("[ERROR] %v", ferr)
-			log.Fatal("Got some error from FusionAuth but the SDK isn't great so not sure what - maybe check your API key")
+			log.Fatal("[ERROR] Got some error from FusionAuth but the SDK isn't great so not sure what - maybe check your API key")
 		}
 	},
 }

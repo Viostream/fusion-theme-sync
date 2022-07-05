@@ -33,7 +33,7 @@ var getCmd = &cobra.Command{
 		}
 
 		if ferr != nil {
-			log.Fatal("Got some error from FusionAuth but the SDK isn't great so not sure what - maybe check your API key")
+			log.Fatal("[ERROR] Got some error from FusionAuth but the SDK isn't great so not sure what - maybe check your API key")
 		}
 
 		// strip susbsitution keys
@@ -57,7 +57,7 @@ var getCmd = &cobra.Command{
 		}
 
 		if ferr != nil {
-			log.Fatal("Got some error from FusionAuth but the SDK isn't great so not sure what - maybe check your API key")
+			log.Fatal("[ERROR] Got some error from FusionAuth but the SDK isn't great so not sure what - maybe check your API key")
 		}
 
 		f, err := os.Create(filepath.Join(directory, "_VERSION.txt"))
