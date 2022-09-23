@@ -25,6 +25,11 @@ func LoadFromDisk(path string, defaultMessageSubstitutions map[string]string) (*
 	}
 
 	for _, f := range files {
+		// Skip "_VERSION.txt" which is written by this program
+		if f.Name() == "_VERSION.txt" {
+			continue
+		}
+
 		fname := strings.Split(f.Name(), ".")
 		switch fname[1] {
 		case "ftl":
